@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Poetry by Heart</title>
+    <style>
+    :root {
+      /* Fondo granate refinado */
+      --bg-color: #cbbebf; 
+      --bg-gradient: radial-gradient(circle at center, #ebdcdb 0%, #c0b1b2 100%);
+      
+      --text-main: #251214;
+      --text-muted: #523b3e;
+      --text-eyebrow: #6b2d35;
+      
+      --primary-color: #6b2d35;
+      --primary-hover: #4e1e24;
+      
+      --secondary-bg: #ffffff;
+      --secondary-text: #251214;
+      --secondary-hover: #f9f3f4;
+      --border-color: #bfa8ab;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      background-color: var(--bg-color);
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header {
+      max-width: 650px;
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-eyebrow);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+
+    p.subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    p.author {
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .cover-container {
+      margin: 1.5rem 0 2.5rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #book-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .book-cover {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 16px 36px rgba(37, 18, 20, 0.28), 0 4px 12px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .book-cover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 44px rgba(37, 18, 20, 0.35), 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .action-wrapper {
+      width: 100%;
+      max-width: 850px;
+      margin-bottom: 3.5rem;
+      padding: 0 1rem;
+    }
+
+    /* Botón destacado superior para Amazon */
+    .btn-featured {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 1.1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(107, 45, 53, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-featured:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+      box-shadow: 0 8px 20px rgba(78, 30, 36, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Rejilla de botones secundarios */
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .cta-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.2rem;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 0.95rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      background-color: var(--secondary-bg);
+      color: var(--secondary-text);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      min-height: 52px;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--secondary-hover);
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+    }
+  </style>
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">Companion Website &amp; Resources</div>
+      <h1>Spanish Poetry by Heart</h1>
+      <p class="subtitle">The Words That Make You One of Them</p>
+      <p class="author">JESÚS OLIVÁN</p>
+    </header>
+
+    <div class="cover-container">
+      <a href="https://www.amazon.es/dp/B0HLWGM434" id="book-link" title="Spanish Poetry by Heart" target="_blank">
+        <img src="./portada_kdp_front.jpg" alt="Spanish Poetry by Heart Cover" class="book-cover">
+      </a>
+    </div>
+
+    <div class="action-wrapper">
+      <!-- Botón principal destacado -->
+      <a href="https://www.amazon.es/dp/B0HLWGM434" class="btn-featured" target="_blank">Book on Amazon</a>
+
+      <!-- Rejilla de botones secundarios con enlaces actualizados -->
+      <div class="cta-grid">
+        <a href="https://www.amazon.es/dp/B0HLWGM434" class="btn-secondary" target="_blank">Paperback Edition</a>
+        <a href="https://www.amazon.es/dp/B0HLWDCDG3" class="btn-secondary" target="_blank">Kindle Edition</a>
+        <a href="spanish_poetry_by_heart_excerpt.pdf" class="btn-secondary" target="_blank">Free Sample (PDF)</a>
+        <a href="spanish_poetry_by_heart_audio_full.mp3" class="btn-secondary" target="_blank">Audio Samples (MP3)</a>
+        <a href="https://www.youtube.com/@SpanishPoetrybyHeart" class="btn-secondary" target="_blank">YouTube Channel</a>
+        <a href="spanish_poetry_by_heart_links.pdf" class="btn-secondary" target="_blank">Links to poems (PDF)</a>
+        <a href="recommendations.html" class="btn-secondary">Recommendations</a>
+        <a href="faq.html" class="btn-secondary">FAQ</a>
+        <a href="contact.html" class="btn-secondary">Contact</a>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 Jesús Oliván • Spanish Poetry by Heart. All rights reserved.
+    </footer>
+  </body>
+</html>
